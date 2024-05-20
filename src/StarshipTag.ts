@@ -15,7 +15,7 @@ export class StarshipTag extends TagAbstract {
      * @returns {Promise<StarshipCollection>}
      * @throws {ClientException}
      */
-    public async getAll(name?: string, model?: string): Promise<StarshipCollection> {
+    public async getAll(search?: string): Promise<StarshipCollection> {
         const url = this.parser.url('/starships', {
         });
 
@@ -23,8 +23,7 @@ export class StarshipTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'name': name,
-                'model': model,
+                'search': search,
             }, [
             ]),
         };

@@ -15,7 +15,7 @@ export class SpecieTag extends TagAbstract {
      * @returns {Promise<SpecieCollection>}
      * @throws {ClientException}
      */
-    public async getAll(name?: string): Promise<SpecieCollection> {
+    public async getAll(search?: string): Promise<SpecieCollection> {
         const url = this.parser.url('/species', {
         });
 
@@ -23,7 +23,7 @@ export class SpecieTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'name': name,
+                'search': search,
             }, [
             ]),
         };

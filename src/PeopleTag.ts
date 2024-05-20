@@ -15,7 +15,7 @@ export class PeopleTag extends TagAbstract {
      * @returns {Promise<PeopleCollection>}
      * @throws {ClientException}
      */
-    public async getAll(name?: string): Promise<PeopleCollection> {
+    public async getAll(search?: string): Promise<PeopleCollection> {
         const url = this.parser.url('/people', {
         });
 
@@ -23,7 +23,7 @@ export class PeopleTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'name': name,
+                'search': search,
             }, [
             ]),
         };

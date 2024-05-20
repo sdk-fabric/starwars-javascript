@@ -15,7 +15,7 @@ export class VehicleTag extends TagAbstract {
      * @returns {Promise<VehicleCollection>}
      * @throws {ClientException}
      */
-    public async getAll(name?: string, model?: string): Promise<VehicleCollection> {
+    public async getAll(search?: string): Promise<VehicleCollection> {
         const url = this.parser.url('/vehicles', {
         });
 
@@ -23,8 +23,7 @@ export class VehicleTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'name': name,
-                'model': model,
+                'search': search,
             }, [
             ]),
         };

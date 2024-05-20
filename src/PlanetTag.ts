@@ -15,7 +15,7 @@ export class PlanetTag extends TagAbstract {
      * @returns {Promise<PlanetCollection>}
      * @throws {ClientException}
      */
-    public async getAll(name?: string): Promise<PlanetCollection> {
+    public async getAll(search?: string): Promise<PlanetCollection> {
         const url = this.parser.url('/planets', {
         });
 
@@ -23,7 +23,7 @@ export class PlanetTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'name': name,
+                'search': search,
             }, [
             ]),
         };

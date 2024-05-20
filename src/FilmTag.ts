@@ -15,7 +15,7 @@ export class FilmTag extends TagAbstract {
      * @returns {Promise<FilmCollection>}
      * @throws {ClientException}
      */
-    public async getAll(title?: string): Promise<FilmCollection> {
+    public async getAll(search?: string): Promise<FilmCollection> {
         const url = this.parser.url('/films', {
         });
 
@@ -23,7 +23,7 @@ export class FilmTag extends TagAbstract {
             url: url,
             method: 'GET',
             params: this.parser.query({
-                'title': title,
+                'search': search,
             }, [
             ]),
         };
