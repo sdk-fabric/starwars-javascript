@@ -5,7 +5,6 @@
 
 import axios, {AxiosRequestConfig} from "axios";
 import {ClientAbstract, CredentialsInterface, TokenStoreInterface} from "sdkgen-client"
-import {OAuth2} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
 import {PeopleTag} from "./PeopleTag";
@@ -66,8 +65,8 @@ export class Client extends ClientAbstract {
 
 
 
-    public static build(clientId: string, clientSecret: string, tokenStore: TokenStoreInterface|null, scopes: Array<string>|null): Client
+    public static build(credentials: CredentialsInterface): Client
     {
-        return new Client('https://swapi.dev/api', new OAuth2(clientId, clientSecret, 'https://api.typehub.cloud/authorization/token', '', tokenStore, scopes));
+        return new Client('https://swapi.dev/api', credentials);
     }
 }

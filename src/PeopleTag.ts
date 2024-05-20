@@ -12,6 +12,8 @@ import {PeopleCollection} from "./PeopleCollection";
 
 export class PeopleTag extends TagAbstract {
     /**
+     * Get all the people resources
+     *
      * @returns {Promise<PeopleCollection>}
      * @throws {ClientException}
      */
@@ -46,6 +48,8 @@ export class PeopleTag extends TagAbstract {
     }
 
     /**
+     * Get a specific people resource
+     *
      * @returns {Promise<People>}
      * @throws {ClientException}
      */
