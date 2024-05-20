@@ -1,0 +1,8 @@
+{
+  "type": "client-typescript",
+  "require": {
+    "sdkfabric/starwars": {
+      "target": "./src"
+    }
+  }
+}
