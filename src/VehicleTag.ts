@@ -12,7 +12,7 @@ import {VehicleCollection} from "./VehicleCollection";
 
 export class VehicleTag extends TagAbstract {
     /**
-     * Get all the vehicle resources
+     * Get all the vehicles
      *
      * @returns {Promise<VehicleCollection>}
      * @throws {ClientException}
@@ -48,7 +48,7 @@ export class VehicleTag extends TagAbstract {
     }
 
     /**
-     * Get a specific vehicle resource
+     * Get a specific vehicle
      *
      * @returns {Promise<Vehicle>}
      * @throws {ClientException}

@@ -12,7 +12,7 @@ import {PlanetCollection} from "./PlanetCollection";
 
 export class PlanetTag extends TagAbstract {
     /**
-     * Get all the planets resources
+     * Get all the planets
      *
      * @returns {Promise<PlanetCollection>}
      * @throws {ClientException}
@@ -48,7 +48,7 @@ export class PlanetTag extends TagAbstract {
     }
 
     /**
-     * Get a specific planets resource
+     * Get a specific planet
      *
      * @returns {Promise<Planet>}
      * @throws {ClientException}

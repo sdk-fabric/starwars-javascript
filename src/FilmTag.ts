@@ -12,7 +12,7 @@ import {FilmCollection} from "./FilmCollection";
 
 export class FilmTag extends TagAbstract {
     /**
-     * Get all the film resources
+     * Get all the films
      *
      * @returns {Promise<FilmCollection>}
      * @throws {ClientException}
@@ -48,7 +48,7 @@ export class FilmTag extends TagAbstract {
     }
 
     /**
-     * Get a specific film resource
+     * Get a specific film
      *
      * @returns {Promise<Film>}
      * @throws {ClientException}

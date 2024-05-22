@@ -12,7 +12,7 @@ import {SpecieCollection} from "./SpecieCollection";
 
 export class SpecieTag extends TagAbstract {
     /**
-     * Get all the species resources
+     * Get all the species
      *
      * @returns {Promise<SpecieCollection>}
      * @throws {ClientException}
@@ -48,7 +48,7 @@ export class SpecieTag extends TagAbstract {
     }
 
     /**
-     * Get a specific species resource
+     * Get a specific specie
      *
      * @returns {Promise<Specie>}
      * @throws {ClientException}

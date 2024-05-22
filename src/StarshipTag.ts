@@ -12,7 +12,7 @@ import {StarshipCollection} from "./StarshipCollection";
 
 export class StarshipTag extends TagAbstract {
     /**
-     * Get all the starship resources
+     * Get all the starships
      *
      * @returns {Promise<StarshipCollection>}
      * @throws {ClientException}
@@ -48,7 +48,7 @@ export class StarshipTag extends TagAbstract {
     }
 
     /**
-     * Get a specific starship resource
+     * Get a specific starship
      *
      * @returns {Promise<Starship>}
      * @throws {ClientException}
