@@ -65,8 +65,8 @@ export class Client extends ClientAbstract {
 
 
 
-    public static build(credentials: CredentialsInterface): Client
+    public static build(): Client
     {
-        return new Client('https://swapi.dev/api', credentials);
+        return new Client('https://swapi.dev/api', new Anonymous());
     }
 }

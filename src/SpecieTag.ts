@@ -48,7 +48,7 @@ export class SpecieTag extends TagAbstract {
     }
 
     /**
-     * Get a specific specie
+     * Get a specific species
      *
      * @returns {Promise<Specie>}
      * @throws {ClientException}
