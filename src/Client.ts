@@ -10,8 +10,8 @@ import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 import {PeopleTag} from "./PeopleTag";
 import {FilmTag} from "./FilmTag";
 import {StarshipTag} from "./StarshipTag";
+import {SpeciesTag} from "./SpeciesTag";
 import {VehicleTag} from "./VehicleTag";
-import {SpecieTag} from "./SpecieTag";
 import {PlanetTag} from "./PlanetTag";
 
 export class Client extends ClientAbstract {
@@ -39,17 +39,17 @@ export class Client extends ClientAbstract {
         );
     }
 
-    public vehicle(): VehicleTag
+    public species(): SpeciesTag
     {
-        return new VehicleTag(
+        return new SpeciesTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public specie(): SpecieTag
+    public vehicle(): VehicleTag
     {
-        return new SpecieTag(
+        return new VehicleTag(
             this.httpClient,
             this.parser
         );
