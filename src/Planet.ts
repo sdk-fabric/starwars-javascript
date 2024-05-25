@@ -4,7 +4,7 @@
  */
 
 /**
- * A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY.
+ * A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY
  */
 export interface Planet {
     name?: string

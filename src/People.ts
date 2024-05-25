@@ -4,7 +4,7 @@
  */
 
 /**
- * A People is an individual person or character within the Star Wars universe.
+ * A People is an individual person or character within the Star Wars universe
  */
 export interface People {
     name?: string

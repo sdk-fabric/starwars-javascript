@@ -4,7 +4,7 @@
  */
 
 /**
- * A Starship is a single transport craft that has hyperdrive capability.
+ * A Starship is a single transport craft that has hyperdrive capability
  */
 export interface Starship {
     name?: string

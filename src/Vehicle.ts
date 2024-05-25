@@ -4,7 +4,7 @@
  */
 
 /**
- * A Vehicle is a single transport craft that does not have hyperdrive capability.
+ * A Vehicle is a single transport craft that does not have hyperdrive capability
  */
 export interface Vehicle {
     name?: string

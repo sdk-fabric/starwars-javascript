@@ -4,7 +4,7 @@
  */
 
 /**
- * A Film is a single film.
+ * A Film is a single film
  */
 export interface Film {
     title?: string
