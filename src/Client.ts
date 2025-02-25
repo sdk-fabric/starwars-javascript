@@ -66,7 +66,8 @@ export class Client extends ClientAbstract {
 
 
 
-    public static build(): Client
+
+    public static buildAnonymous(): Client
     {
         return new Client('https://swapi.dev/api', new Anonymous());
     }
