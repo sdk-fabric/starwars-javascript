@@ -1,6 +1,6 @@
 {
   "name": "@sdkfabric/starwars",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Starwars JavaScript SDK managed by SDK Fabric",
   "license": "MIT",
   "homepage": "https://sdk-fabric.org",
@@ -8,17 +8,31 @@
     "type": "git",
     "url": "https://github.com/sdk-fabric/starwars-javascript"
   },
-  "main": "dist/Client.js",
-  "types": "dist/Client.d.ts",
-  "files": ["dist"],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap"
   },
   "dependencies": {
-    "axios": "1.6.8",
-    "sdkgen-client": "2.0.1"
+    "sdkgen-client": "^2.1.0"
   },
   "devDependencies": {
-    "typescript": "4.9.5"
+    "typescript": "^4.3",
+    "tsup": "^8.3.5"
   }
 }
