@@ -24,3 +24,4 @@ export interface Vehicle {
     created?: string
     edited?: string
 }
+

@@ -11,3 +11,4 @@ export interface Root {
     starships?: string
     vehicles?: string
 }
+

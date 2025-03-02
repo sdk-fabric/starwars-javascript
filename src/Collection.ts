@@ -8,3 +8,4 @@ export interface Collection {
     next?: string
     previous?: string
 }
+

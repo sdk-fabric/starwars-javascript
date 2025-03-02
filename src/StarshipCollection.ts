@@ -5,6 +5,8 @@
 
 import {Collection} from "./Collection";
 import {Starship} from "./Starship";
+
 export interface StarshipCollection extends Collection {
     results?: Array<Starship>
 }
+

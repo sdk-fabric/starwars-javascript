@@ -26,3 +26,4 @@ export interface Starship {
     created?: string
     edited?: string
 }
+

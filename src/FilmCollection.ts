@@ -5,6 +5,8 @@
 
 import {Collection} from "./Collection";
 import {Film} from "./Film";
+
 export interface FilmCollection extends Collection {
     results?: Array<Film>
 }
+

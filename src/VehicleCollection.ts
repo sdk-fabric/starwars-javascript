@@ -5,6 +5,8 @@
 
 import {Collection} from "./Collection";
 import {Vehicle} from "./Vehicle";
+
 export interface VehicleCollection extends Collection {
     results?: Array<Vehicle>
 }
+

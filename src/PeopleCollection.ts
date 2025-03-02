@@ -5,6 +5,8 @@
 
 import {Collection} from "./Collection";
 import {People} from "./People";
+
 export interface PeopleCollection extends Collection {
     results?: Array<People>
 }
+

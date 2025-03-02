@@ -5,6 +5,8 @@
 
 import {Collection} from "./Collection";
 import {Planet} from "./Planet";
+
 export interface PlanetCollection extends Collection {
     results?: Array<Planet>
 }
+
