@@ -1,9 +1,4 @@
 {
-  "typehub_user": "sdkfabric",
-  "typehub_document": "starwars",
-  "github_user": "sdk-fabric",
-  "github_repository": "starwars-javascript",
-
   "name": "@sdkfabric/starwars",
   "description": "Starwars JavaScript SDK managed by SDK Fabric",
   "website": "https://sdk-fabric.org"
