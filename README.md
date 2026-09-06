@@ -1,28 +1,50 @@
 
-# Starwars SDK
+# starwars-javascript
 
-This SDK is managed by the [SDK Fabric](https://sdk-fabric.org/) project.
-Our goal is to build a global infrastructure to automatically generate
-an SDK for every API, please take a look at our website for more information.
+This [SDK](https://github.com/sdk-fabric/starwars-javascript) is managed by the [SDK Fabric](https://sdk-fabric.org/) project, a global infrastructure to
+automatically generate SDKs for every API.
 
-## Contribution
-
-Please do not create a pull requests at this repository since the code is
-automatically generated. If an operation or type is missing at the client SDK
-please register at the [TypeHub](https://typehub.cloud/) platform and create
-a pull request at the [Starwars](https://app.typehub.cloud/d/sdkfabric/starwars)
-specification. The system will then automatically create a GIT commit and update
-the code.
+You can find more information about this SDK at [TypeHub](https://typehub.cloud/):
+https://app.typehub.cloud/d/sdkfabric/starwars
 
 ## Usage
-
-The following example shows how you initialize the client:
 
 ```typescript
 const client = Client::build('[access_token]');
 
-// @TODO use the client
-```
+// Get all the people.
+const response = await client.people().getall("search");
 
-You can find all available operations and types at:
-https://app.typehub.cloud/d/sdkfabric/starwars
+// Get a specific people.
+const response = await client.people().get("id");
+
+// Get all the films.
+const response = await client.film().getall("search");
+
+// Get a specific film.
+const response = await client.film().get("id");
+
+// Get all the starships.
+const response = await client.starship().getall("search");
+
+// Get a specific starship.
+const response = await client.starship().get("id");
+
+// Get all the species.
+const response = await client.species().getall("search");
+
+// Get a specific species.
+const response = await client.species().get("id");
+
+// Get all the vehicles.
+const response = await client.vehicle().getall("search");
+
+// Get a specific vehicle.
+const response = await client.vehicle().get("id");
+
+// Get all the planets.
+const response = await client.planet().getall("search");
+
+// Get a specific planet.
+const response = await client.planet().get("id");
+```
