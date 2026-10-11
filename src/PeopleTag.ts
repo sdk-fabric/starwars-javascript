@@ -11,6 +11,35 @@ import {PeopleCollection} from "./PeopleCollection";
 
 export class PeopleTag extends TagAbstract {
     /**
+     * Get a specific person
+     *
+     * @returns {Promise<People>}
+     * @throws {ClientException}
+     */
+    public async get(id: string): Promise<People> {
+        const url = this.parser.url('/people/:id', {
+            'id': id,
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as People;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
      * Get all the people
      *
      * @returns {Promise<PeopleCollection>}
@@ -34,35 +63,6 @@ export class PeopleTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as PeopleCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
-     * Get a specific people
-     *
-     * @returns {Promise<People>}
-     * @throws {ClientException}
-     */
-    public async get(id: string): Promise<People> {
-        const url = this.parser.url('/people/:id', {
-            'id': id,
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as People;
         }
 
         const statusCode = response.status;

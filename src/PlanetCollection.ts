@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {Collection} from "./Collection";
-import {Planet} from "./Planet";
+import type {Collection} from "./Collection";
+import type {Planet} from "./Planet";
 
 export interface PlanetCollection extends Collection {
     results?: Array<Planet>

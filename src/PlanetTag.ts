@@ -11,35 +11,6 @@ import {PlanetCollection} from "./PlanetCollection";
 
 export class PlanetTag extends TagAbstract {
     /**
-     * Get all the planets
-     *
-     * @returns {Promise<PlanetCollection>}
-     * @throws {ClientException}
-     */
-    public async getAll(search?: string): Promise<PlanetCollection> {
-        const url = this.parser.url('/planets', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'search': search,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as PlanetCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Get a specific planet
      *
      * @returns {Promise<Planet>}
@@ -63,6 +34,35 @@ export class PlanetTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as Planet;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Get all the planets
+     *
+     * @returns {Promise<PlanetCollection>}
+     * @throws {ClientException}
+     */
+    public async getAll(search?: string): Promise<PlanetCollection> {
+        const url = this.parser.url('/planets', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as PlanetCollection;
         }
 
         const statusCode = response.status;

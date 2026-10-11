@@ -7,22 +7,14 @@ import {ClientAbstract, CredentialsInterface, TokenStoreInterface, HttpRequest} 
 import {Anonymous} from "sdkgen-client"
 import {ClientException, UnknownStatusCodeException} from "sdkgen-client";
 
-import {PeopleTag} from "./PeopleTag";
 import {FilmTag} from "./FilmTag";
-import {StarshipTag} from "./StarshipTag";
-import {SpeciesTag} from "./SpeciesTag";
-import {VehicleTag} from "./VehicleTag";
+import {PeopleTag} from "./PeopleTag";
 import {PlanetTag} from "./PlanetTag";
+import {SpeciesTag} from "./SpeciesTag";
+import {StarshipTag} from "./StarshipTag";
+import {VehicleTag} from "./VehicleTag";
 
 export class Client extends ClientAbstract {
-    public people(): PeopleTag
-    {
-        return new PeopleTag(
-            this.httpClient,
-            this.parser
-        );
-    }
-
     public film(): FilmTag
     {
         return new FilmTag(
@@ -31,9 +23,17 @@ export class Client extends ClientAbstract {
         );
     }
 
-    public starship(): StarshipTag
+    public people(): PeopleTag
     {
-        return new StarshipTag(
+        return new PeopleTag(
+            this.httpClient,
+            this.parser
+        );
+    }
+
+    public planet(): PlanetTag
+    {
+        return new PlanetTag(
             this.httpClient,
             this.parser
         );
@@ -47,17 +47,17 @@ export class Client extends ClientAbstract {
         );
     }
 
-    public vehicle(): VehicleTag
+    public starship(): StarshipTag
     {
-        return new VehicleTag(
+        return new StarshipTag(
             this.httpClient,
             this.parser
         );
     }
 
-    public planet(): PlanetTag
+    public vehicle(): VehicleTag
     {
-        return new PlanetTag(
+        return new VehicleTag(
             this.httpClient,
             this.parser
         );

@@ -7,21 +7,21 @@
  * A Vehicle is a single transport craft that does not have hyperdrive capability
  */
 export interface Vehicle {
-    name?: string
-    model?: string
-    vehicle_class?: string
-    manufacturer?: string
-    length?: string
-    cost_in_credits?: string
-    crew?: string
-    passengers?: string
-    max_atmosphering_speed?: string
     cargo_capacity?: string
     consumables?: string
+    cost_in_credits?: string
+    created?: string
+    crew?: string
+    edited?: string
     films?: Array<string>
+    length?: string
+    manufacturer?: string
+    max_atmosphering_speed?: string
+    model?: string
+    name?: string
+    passengers?: string
     pilots?: Array<string>
     url?: string
-    created?: string
-    edited?: string
+    vehicle_class?: string
 }
 

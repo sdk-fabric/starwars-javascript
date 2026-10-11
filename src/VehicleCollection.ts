@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {Collection} from "./Collection";
-import {Vehicle} from "./Vehicle";
+import type {Collection} from "./Collection";
+import type {Vehicle} from "./Vehicle";
 
 export interface VehicleCollection extends Collection {
     results?: Array<Vehicle>

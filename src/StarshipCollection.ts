@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {Collection} from "./Collection";
-import {Starship} from "./Starship";
+import type {Collection} from "./Collection";
+import type {Starship} from "./Starship";
 
 export interface StarshipCollection extends Collection {
     results?: Array<Starship>

@@ -11,35 +11,6 @@ import {FilmCollection} from "./FilmCollection";
 
 export class FilmTag extends TagAbstract {
     /**
-     * Get all the films
-     *
-     * @returns {Promise<FilmCollection>}
-     * @throws {ClientException}
-     */
-    public async getAll(search?: string): Promise<FilmCollection> {
-        const url = this.parser.url('/films', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'search': search,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as FilmCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Get a specific film
      *
      * @returns {Promise<Film>}
@@ -63,6 +34,35 @@ export class FilmTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as Film;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Get all the films
+     *
+     * @returns {Promise<FilmCollection>}
+     * @throws {ClientException}
+     */
+    public async getAll(search?: string): Promise<FilmCollection> {
+        const url = this.parser.url('/films', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as FilmCollection;
         }
 
         const statusCode = response.status;

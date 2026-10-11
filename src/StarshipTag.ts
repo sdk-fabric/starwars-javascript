@@ -11,35 +11,6 @@ import {StarshipCollection} from "./StarshipCollection";
 
 export class StarshipTag extends TagAbstract {
     /**
-     * Get all the starships
-     *
-     * @returns {Promise<StarshipCollection>}
-     * @throws {ClientException}
-     */
-    public async getAll(search?: string): Promise<StarshipCollection> {
-        const url = this.parser.url('/starships', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'search': search,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as StarshipCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Get a specific starship
      *
      * @returns {Promise<Starship>}
@@ -63,6 +34,35 @@ export class StarshipTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as Starship;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Get all the starships
+     *
+     * @returns {Promise<StarshipCollection>}
+     * @throws {ClientException}
+     */
+    public async getAll(search?: string): Promise<StarshipCollection> {
+        const url = this.parser.url('/starships', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as StarshipCollection;
         }
 
         const statusCode = response.status;

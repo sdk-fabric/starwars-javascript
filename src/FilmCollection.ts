@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {Collection} from "./Collection";
-import {Film} from "./Film";
+import type {Collection} from "./Collection";
+import type {Film} from "./Film";
 
 export interface FilmCollection extends Collection {
     results?: Array<Film>

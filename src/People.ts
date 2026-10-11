@@ -7,21 +7,21 @@
  * A People is an individual person or character within the Star Wars universe
  */
 export interface People {
-    name?: string
     birth_year?: string
+    created?: string
+    edited?: string
     eye_color?: string
+    films?: Array<string>
     gender?: string
     hair_color?: string
     height?: string
-    mass?: string
-    skin_color?: string
     homeworld?: string
-    films?: Array<string>
+    mass?: string
+    name?: string
+    skin_color?: string
     species?: Array<string>
     starships?: Array<string>
-    vehicles?: Array<string>
     url?: string
-    created?: string
-    edited?: string
+    vehicles?: Array<string>
 }
 

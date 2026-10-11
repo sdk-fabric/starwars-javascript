@@ -3,8 +3,8 @@
  * {@link https://sdkgen.app}
  */
 
-import {Collection} from "./Collection";
-import {Species} from "./Species";
+import type {Collection} from "./Collection";
+import type {Species} from "./Species";
 
 export interface SpeciesCollection extends Collection {
     results?: Array<Species>

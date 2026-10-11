@@ -11,35 +11,6 @@ import {SpeciesCollection} from "./SpeciesCollection";
 
 export class SpeciesTag extends TagAbstract {
     /**
-     * Get all the species
-     *
-     * @returns {Promise<SpeciesCollection>}
-     * @throws {ClientException}
-     */
-    public async getAll(search?: string): Promise<SpeciesCollection> {
-        const url = this.parser.url('/species', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'search': search,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as SpeciesCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Get a specific species
      *
      * @returns {Promise<Species>}
@@ -63,6 +34,35 @@ export class SpeciesTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as Species;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Get all the species
+     *
+     * @returns {Promise<SpeciesCollection>}
+     * @throws {ClientException}
+     */
+    public async getAll(search?: string): Promise<SpeciesCollection> {
+        const url = this.parser.url('/species', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as SpeciesCollection;
         }
 
         const statusCode = response.status;

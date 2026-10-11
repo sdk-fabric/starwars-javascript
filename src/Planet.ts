@@ -7,19 +7,19 @@
  * A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY
  */
 export interface Planet {
-    name?: string
-    diameter?: string
-    rotation_period?: string
-    orbital_period?: string
-    gravity?: string
-    population?: string
     climate?: string
-    terrain?: string
-    surface_water?: string
-    residents?: Array<string>
-    films?: Array<string>
-    url?: string
     created?: string
+    diameter?: string
     edited?: string
+    films?: Array<string>
+    gravity?: string
+    name?: string
+    orbital_period?: string
+    population?: string
+    residents?: Array<string>
+    rotation_period?: string
+    surface_water?: string
+    terrain?: string
+    url?: string
 }
 

@@ -11,35 +11,6 @@ import {VehicleCollection} from "./VehicleCollection";
 
 export class VehicleTag extends TagAbstract {
     /**
-     * Get all the vehicles
-     *
-     * @returns {Promise<VehicleCollection>}
-     * @throws {ClientException}
-     */
-    public async getAll(search?: string): Promise<VehicleCollection> {
-        const url = this.parser.url('/vehicles', {
-        });
-
-        let request: HttpRequest = {
-            url: url,
-            method: 'GET',
-            headers: {
-            },
-            params: this.parser.query({
-                'search': search,
-            }, [
-            ]),
-        };
-
-        const response = await this.httpClient.request(request);
-        if (response.ok) {
-            return await response.json() as VehicleCollection;
-        }
-
-        const statusCode = response.status;
-        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
-    }
-    /**
      * Get a specific vehicle
      *
      * @returns {Promise<Vehicle>}
@@ -63,6 +34,35 @@ export class VehicleTag extends TagAbstract {
         const response = await this.httpClient.request(request);
         if (response.ok) {
             return await response.json() as Vehicle;
+        }
+
+        const statusCode = response.status;
+        throw new UnknownStatusCodeException('The server returned an unknown status code: ' + statusCode);
+    }
+    /**
+     * Get all the vehicles
+     *
+     * @returns {Promise<VehicleCollection>}
+     * @throws {ClientException}
+     */
+    public async getAll(search?: string): Promise<VehicleCollection> {
+        const url = this.parser.url('/vehicles', {
+        });
+
+        let request: HttpRequest = {
+            url: url,
+            method: 'GET',
+            headers: {
+            },
+            params: this.parser.query({
+                'search': search,
+            }, [
+            ]),
+        };
+
+        const response = await this.httpClient.request(request);
+        if (response.ok) {
+            return await response.json() as VehicleCollection;
         }
 
         const statusCode = response.status;

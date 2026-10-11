@@ -7,23 +7,23 @@
  * A Starship is a single transport craft that has hyperdrive capability
  */
 export interface Starship {
-    name?: string
-    model?: string
-    starship_class?: string
-    manufacturer?: string
-    cost_in_credits?: string
-    length?: string
-    crew?: string
-    passengers?: string
-    max_atmosphering_speed?: string
-    hyperdrive_rating?: string
     MGLT?: string
     cargo_capacity?: string
     consumables?: string
-    films?: Array<string>
-    pilots?: Array<string>
-    url?: string
+    cost_in_credits?: string
     created?: string
+    crew?: string
     edited?: string
+    films?: Array<string>
+    hyperdrive_rating?: string
+    length?: string
+    manufacturer?: string
+    max_atmosphering_speed?: string
+    model?: string
+    name?: string
+    passengers?: string
+    pilots?: Array<string>
+    starship_class?: string
+    url?: string
 }
 
