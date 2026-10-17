@@ -12,7 +12,7 @@ on:
         description: "The TypeHub changelog on tag"
         required: false
 permissions:
-  id-token: write  # Required for OIDC
+  id-token: write
   contents: write
 jobs:
   generate:
@@ -31,14 +31,6 @@ jobs:
     needs: generate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v6
+      - uses: sdk-fabric/javascript-publish-action@v0.1.0
         with:
-          node-version: '24.x'
-          registry-url: 'https://registry.npmjs.org'
-          package-manager-cache: false
-      - run: npm version ${{ inputs.typehub_version }} --no-git-tag-version
-      - run: npm install
-      - run: node ./build_index.js
-      - run: npm run build
-      - run: npm publish
+          typehub_version: '${{ inputs.typehub_version }}'
