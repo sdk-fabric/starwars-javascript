@@ -12,39 +12,39 @@ https://app.typehub.cloud/d/sdkfabric/starwars
 ```typescript
 const client = Client::build('[access_token]');
 
-// Get all the people.
-const response = await client.people().getAll("search");
-
-// Get a specific people.
-const response = await client.people().get("id");
+// Get a specific film.
+const response = await client.film().get("id");
 
 // Get all the films.
 const response = await client.film().getAll("search");
 
-// Get a specific film.
-const response = await client.film().get("id");
+// Get a specific person.
+const response = await client.people().get("id");
 
-// Get all the starships.
-const response = await client.starship().getAll("search");
+// Get all the people.
+const response = await client.people().getAll("search");
 
-// Get a specific starship.
-const response = await client.starship().get("id");
-
-// Get all the species.
-const response = await client.species().getAll("search");
-
-// Get a specific species.
-const response = await client.species().get("id");
-
-// Get all the vehicles.
-const response = await client.vehicle().getAll("search");
-
-// Get a specific vehicle.
-const response = await client.vehicle().get("id");
+// Get a specific planet.
+const response = await client.planet().get("id");
 
 // Get all the planets.
 const response = await client.planet().getAll("search");
 
-// Get a specific planet.
-const response = await client.planet().get("id");
+// Get a specific species.
+const response = await client.species().get("id");
+
+// Get all the species.
+const response = await client.species().getAll("search");
+
+// Get a specific starship.
+const response = await client.starship().get("id");
+
+// Get all the starships.
+const response = await client.starship().getAll("search");
+
+// Get a specific vehicle.
+const response = await client.vehicle().get("id");
+
+// Get all the vehicles.
+const response = await client.vehicle().getAll("search");
 ```
